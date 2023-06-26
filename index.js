@@ -246,4 +246,15 @@ function render() {
     document.getElementById('feed').innerHTML = getFeedHtml();
 }
 
+// Add the following code to populate local storage with data from data.js
+// Modify the file path to data.js based on your project structure
+fetch('data.js')
+    .then(response => response.json())
+    .then(data => {
+        tweetsData = data;
+        localStorage.setItem('tweetsData', JSON.stringify(tweetsData));
+        render();
+    })
+    .catch(error => console.log('Error fetching data:', error));
+
 render();
