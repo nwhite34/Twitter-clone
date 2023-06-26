@@ -248,7 +248,7 @@ function render() {
 
 // Add the following code to populate local storage with data from data.js
 // Modify the file path to data.js based on your project structure
-fetch('data.js')
+fetch('./data.js')
     .then(response => response.json())
     .then(data => {
         tweetsData = data;
